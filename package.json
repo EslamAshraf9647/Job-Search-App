@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start:dev": "set NODE_ENV=dev && node index.js",
-    "start:prod": "set NODE_ENV=prod && node index.js"
+    "start:prod": "set NODE_ENV=prod && node index.js",
+    "build": "npm i"
   },
   "keywords": [],
   "author": "",
