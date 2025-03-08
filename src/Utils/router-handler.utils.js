@@ -14,7 +14,7 @@ const routerhandler = (app,express) => {
     app.use('/job',jobcontroller)
     app.use("/Assets",express.static("Assets"))
 
-    app.get('/',(req,res) => res.status(200).json({message:"welcome to saraha app"}))
+    app.get('/',(req,res) => res.status(200).json({message:"welcome to job search app"}))
 
     app.all('*',(req,res) => res.status(404).json({
         message:"Route not found please make sure from your url and your method"
