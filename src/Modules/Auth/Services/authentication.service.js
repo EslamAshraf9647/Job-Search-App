@@ -1,7 +1,7 @@
 import UserModel from "../../../DB/models/user.model.js"
 import { hashing, comparing } from "../../../Utils/crypto.utils.js"
 import { emitter } from "../../../Services/send-email.service.js"
-import emailTemplate from "../../../Utils/email-tempelte.js"
+import {emailTemplate} from "../../../Utils/email-tempelte.js"
 import { DateTime } from "luxon";
 import jwt from 'jsonwebtoken'
 import {v4 as uuidv4} from 'uuid'
@@ -83,7 +83,7 @@ export const SignUpService = async(req,res) => {
 
     export const SigninService = async(req,res) => {
         const {email , password} = req.body 
-        const user = await UserModel.findOne({email, isEmailVerified:true})
+        const user = await UserModel.findOne({email, })
         if(!user){
             return res.status(404).json({message:"User not found"})
         }

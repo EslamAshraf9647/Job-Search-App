@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import *  as constants from "./src/Constants/constants.js"
+import *  as constants from "../../Constants/constants.js"
 
 const applicationSchema = new mongoose.Schema({
     jobId:{
@@ -13,10 +13,10 @@ const applicationSchema = new mongoose.Schema({
         required:true,
     },
     userCV: {
-        secure_url: String,
-        public_id: String,
+        type:String,
         required: true
     },
+    
     status:{
         type:String,
         default:constants.applicationStatus.PENDING,

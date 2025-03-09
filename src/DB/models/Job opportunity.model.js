@@ -50,7 +50,16 @@ const JobOpportunitySchema = new mongoose.Schema({
         ref: 'Company',
     }
 
-},{timestamps:true})
+},{
+    timestamps:true,
+    
+})
+
+JobOpportunitySchema.virtual("application", {
+    ref: "application",
+    localField: "_id",
+    foreignField: "jobId"
+});
 
 const JobOpportunityModel = mongoose.models.Jobs || mongoose.model('Jobs',JobOpportunitySchema)
 
